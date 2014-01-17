@@ -133,7 +133,7 @@ iXstart( 0 )
     this->type = LGElement::DOUBLE_GRAPH;
     this->name = name;
     
-    xwidth = this->parentGUI->xwidth;
+    xwidth = this->parentGUI->getAbscissaWidth();
 }
     
 
@@ -212,7 +212,7 @@ void DoubleLiveGraph::update( )
         return;
     
     // lower bound
-    xwidth = this->parentGUI->xwidth;
+    xwidth = this->parentGUI->getAbscissaWidth();
     double xLowerBound = xvalues->at(len-1) - xwidth;
     
     // current value at start index

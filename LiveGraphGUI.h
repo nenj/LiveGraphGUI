@@ -72,21 +72,24 @@ public:
     DoubleLiveGraph*    addGraph( const std::string& graphName,
                                   std::vector<double>* xvalues_, std::vector<double>* yvalues_,
                                   double ymin_, double ymax_ );
-    
-    void setAbscissaWidth( double );
+
+    void setEnabled( bool b ) { enabled = b; }
+
     void draw();
     void update();
     
 protected:
-    bool enabled;
     cinder::Vec2f boxSize;
     std::vector<LGElement*> elements;
+    double xwidth;
     
 public:
     cinder::Vec2f getBoxSize() { return boxSize; }
+    void setAbscissaWidth( double );
+    double getAbscissaWidth( ) { return xwidth; }
 
 public:
-    double xwidth;
+    bool enabled;
 };
     
     
