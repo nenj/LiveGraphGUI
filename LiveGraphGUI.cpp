@@ -106,6 +106,15 @@ void LiveGraphGUI::update( )
     }
 }
     
+
+void LiveGraphGUI::reset( )
+{
+    for( vector<LGElement*>::iterator it = elements.begin(); it != elements.end(); it++ )
+    {
+        (*it)->reset( );
+    }
+}
+    
 //-----------------------------------------------------------------------------
     
 LGElement::LGElement(  )
@@ -246,6 +255,12 @@ void DoubleLiveGraph::update( )
         }
     }
     return;
+}
+    
+
+void DoubleLiveGraph::reset( )
+{
+    iXstart = -1;
 }
     
 //-----------------------------------------------------------------------------

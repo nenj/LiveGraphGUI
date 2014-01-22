@@ -77,6 +77,7 @@ public:
 
     void draw();
     void update();
+    void reset();
     
 protected:
     cinder::Vec2f boxSize;
@@ -105,6 +106,7 @@ public:
     virtual ~LGElement( ) = 0;
     virtual cinder::Vec2f draw( cinder::Vec2f pos ) = 0;
     virtual void update( ) = 0;
+    virtual void reset( ) = 0;
     
 protected:
     LiveGraphGUI*   parentGUI;
@@ -123,6 +125,7 @@ public:
     cinder::Vec2f draw( cinder::Vec2f pos );
     
     void update( );
+    void reset( );
     
 protected:
     std::vector<double>* xvalues;
